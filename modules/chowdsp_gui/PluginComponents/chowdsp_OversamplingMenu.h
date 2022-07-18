@@ -1,6 +1,7 @@
 #pragma once
 
 #if JUCE_MODULE_AVAILABLE_chowdsp_dsp
+#include <chowdsp_dsp/chowdsp_dsp.h>
 
 namespace chowdsp
 {
