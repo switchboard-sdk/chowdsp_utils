@@ -20,25 +20,31 @@ BEGIN_JUCE_MODULE_DECLARATION
 
 #pragma once
 
+//STL includes
 #include <array>
 #include <unordered_map>
 
+//JUCE includes
 #include <chowdsp_simd/chowdsp_simd.h>
 #include <chowdsp_math/chowdsp_math.h>
 
 #if JUCE_MODULE_AVAILABLE_juce_dsp
 #include <juce_dsp/juce_dsp.h>
-#include "DataStructures/chowdsp_SIMDAudioBlock.h"
+#include "chowdsp_dsp_data_structures/Buffers/chowdsp_SIMDAudioBlock.h"
 #endif
 
-#include "DataStructures/chowdsp_ScopedValue.h"
-#include "DataStructures/chowdsp_Buffer.h"
-#include "DataStructures/chowdsp_BufferView.h"
-#include "DataStructures/chowdsp_SmoothedBufferValue.h"
-#include "DataStructures/chowdsp_RebufferedProcessor.h"
-#include "DataStructures/chowdsp_LookupTableTransform.h"
-#include "DataStructures/chowdsp_LookupTableCache.h"
+// third-party includes
+#include "third_party/moodycamel/readerwriterqueue.h"
+
+#include "Other/chowdsp_ScopedValue.h"
+#include "Other/chowdsp_SmoothedBufferValue.h"
+
+#include "Buffers/chowdsp_Buffer.h"
+#include "Buffers/chowdsp_BufferView.h"
+#include "Processors/chowdsp_RebufferedProcessor.h"
+#include "LookupTables/chowdsp_LookupTableTransform.h"
+#include "LookupTables/chowdsp_LookupTableCache.h"
 
 #if JUCE_MODULE_AVAILABLE_juce_dsp
-#include "DataStructures/chowdsp_COLAProcessor.h"
+#include "Processors/chowdsp_COLAProcessor.h"
 #endif
